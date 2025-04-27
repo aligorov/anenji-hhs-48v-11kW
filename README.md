@@ -1,1 +1,1 @@
-# anenji-hhs-48v-11kW
+# anenji-hhs-48v-11kW  HAOS  Modbus
