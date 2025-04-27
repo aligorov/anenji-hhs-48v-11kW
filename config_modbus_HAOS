@@ -1,0 +1,179 @@
+modbus:
+  - name: modbus_hub
+    type: rtuovertcp
+    host: IP  
+    port: Port
+    delay: 1
+    message_wait_milliseconds: 30
+    timeout: 5
+##    delay: 30
+##    timeout: 5
+    sensors:
+      - name: Total PV  Power
+        slave: 1
+        address: 302
+        input_type: holding
+        unit_of_measurement: W
+        device_class: power
+        state_class: measurement
+        scale: 1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+
+      - name: Day  Power
+        slave: 1
+        address: 702
+        input_type: holding
+        unit_of_measurement: kW
+        device_class: power
+        state_class: measurement
+        scale: 0.01
+        offset: 0
+        precision: 2
+        data_type: int16
+        scan_interval: 30  
+
+      - name: Battery  Power
+        slave: 1
+        address: 279
+        input_type: holding
+        unit_of_measurement: W
+        device_class: power
+        state_class: measurement
+        scale: 1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30 
+
+      - name: Battery A
+        slave: 1
+        address: 278
+        input_type: holding
+        unit_of_measurement: A
+        scale: 0.1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        device_class: current
+        state_class: measurement 
+
+      - name: Battery Volts
+        slave: 1
+        address: 277
+        input_type: holding
+        scale: 0.1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        unit_of_measurement: "V"
+        device_class: voltage
+        state_class: measurement
+
+      - name: Battery SOC
+        slave: 1
+        address: 280
+        input_type: holding
+        scale: 1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        unit_of_measurement: "%"
+        device_class: battery
+        state_class: measurement
+        
+      - name: Load 
+        slave: 1
+        address: 349
+        input_type: holding
+        scale: 1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        unit_of_measurement: "W"
+        device_class: power
+        state_class: measurement
+        
+      - name: PV1 Power
+        slave: 1
+        address: 353
+        input_type: holding
+        scale: 1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        unit_of_measurement: "W"
+        device_class: power
+        state_class: measurement  
+        
+      - name: PV1 A
+        slave: 1
+        address: 352
+        input_type: holding
+        unit_of_measurement: A
+        scale: 0.1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        device_class: current
+        state_class: measurement  
+        
+      - name: PV1 Voltage
+        slave: 1
+        address: 351
+        input_type: holding
+        unit_of_measurement: V
+        scale: 0.1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        device_class: voltage
+        state_class: measurement
+        
+      - name: PV2 Power
+        slave: 1
+        address: 391
+        input_type: holding
+        scale: 1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        unit_of_measurement: "W"
+        device_class: power
+        state_class: measurement  
+        
+      - name: PV2 A
+        slave: 1
+        address: 390
+        input_type: holding
+        unit_of_measurement: A
+        scale: 0.1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        device_class: current
+        state_class: measurement  
+        
+      - name: PV2 Voltage
+        slave: 1
+        address: 389
+        input_type: holding
+        unit_of_measurement: V
+        scale: 0.1
+        offset: 0
+        precision: 0
+        data_type: int16
+        scan_interval: 30   
+        device_class: voltage
+        state_class: measurement        
